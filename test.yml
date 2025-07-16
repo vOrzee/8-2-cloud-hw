@@ -1,5 +1,5 @@
 ---
-- name: test
+- name: homework 2 task 2
   gather_facts: false
   hosts: webservers
   vars:
@@ -17,7 +17,8 @@
         search_regex: OpenSSH
 
   tasks:
-    - name: create test file
-      copy:
-        dest: /tmp/test
-        content: "success"
+    - name: install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+...
